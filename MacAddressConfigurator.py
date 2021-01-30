@@ -6,7 +6,7 @@ class color:
   BLUE = '\033[96m'
   DEFAULT = '\033[0m'
 
-difMac = "02:a0:04:d3:00:11"
+difMac = "12:22:33:44:55:66"
 okStr = "---------------------------------------[OK]---------------------------------------"
 
 
@@ -25,7 +25,7 @@ if(newMac == 'd' or newMac =='D'):
     difMac = newMac
     subprocess.call("sudo ifconfig "+interface+" hw ether " +difMac,shell=True);
 else:
-    difMac = "02:a0:04:d3:00:11"
+    difMac = "12:22:33:44:55:66"
     subprocess.call("sudo ifconfig "+interface+" hw ether "+difMac,shell=True)
 
 
