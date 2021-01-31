@@ -7,7 +7,7 @@ class color:
     DEFAULT = '\033[0m'
 
 
-difMac = "12:22:33:44:55:66"
+difMac = "10:fe:ad:33:4c:65"
 okStr = "---------------------------------------[OK]---------------------------------------"
 
 print("Installing/Updating net-tools...")
@@ -21,11 +21,11 @@ interface = input("Give the interface you want to configure: ")
 subprocess.call("ifconfig " + interface + " down", shell=True)
 newMac = input(color.BLUE + "Give new MAC or press (d) for default: " + color.DEFAULT)
 
-if newMac == 'd' or newMac == 'D':
-    difMac = newMac
+if newMac == "d" or "D":
+
     subprocess.call(" ifconfig " + interface + " hw ether " + difMac, shell=True)
 else:
-    difMac = "12:22:33:44:55:66"
+    difMac = newMac
     subprocess.call(" ifconfig " + interface + " hw ether " + difMac, shell=True)
 
 subprocess.call("sudo ifconfig " + interface + " up", shell=True)
@@ -34,3 +34,6 @@ print(okStr)
 
 print("Check new MAC: ")
 subprocess.call("sudo ifconfig", shell=True)
+subprocess.call("sudo ifconfig " + interface + " up", shell=True)
+
+
