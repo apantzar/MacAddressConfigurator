@@ -10,13 +10,13 @@ class color:
 difMac = "10:fe:ad:33:4c:65"
 okStr = "---------------------------------------[OK]---------------------------------------"
 
-print("Installing/Updating net-tools...")
+print(color.BLUE +"Installing/Updating net-tools..."+color.DEFAULT)
 subprocess.call(" apt install net-tools", shell=True);
 print(okStr)
 
 subprocess.call("ifconfig", shell=True)
 
-interface = input("Give the interface you want to configure: ")
+interface = input(color.BLUE+"Give the interface you want to configure: "+color.DEFAULT)
 
 subprocess.call("ifconfig " + interface + " down", shell=True)
 newMac = input(color.BLUE + "Give new MAC or press (d) for default: " + color.DEFAULT)
@@ -32,7 +32,7 @@ subprocess.call("sudo ifconfig " + interface + " up", shell=True)
 
 print(okStr)
 
-print("Check new MAC: ")
+print(color.BLUE+"Check new MAC: "+color.DEFAULT)
 subprocess.call("sudo ifconfig", shell=True)
 subprocess.call("sudo ifconfig " + interface + " up", shell=True)
 
