@@ -1,18 +1,35 @@
 # !/usr/bin/env python
 import subprocess
+from random import random
+from randmac import RandMac
 
 
 class color:
     BLUE = '\033[96m'
     DEFAULT = '\033[0m'
+    RED = '\033[91m'
 
 
-difMac = "10:fe:ad:33:4c:65"
+difMac = str(RandMac())
+
 okStr = "---------------------------------------[OK]---------------------------------------"
+def checkForUpdates():
+    print(color.BLUE + "Installing/Updating net-tools..." + color.DEFAULT)
+    subprocess.call(" apt install net-tools", shell=True);
+    print(okStr)
 
-print(color.BLUE +"Installing/Updating net-tools..."+color.DEFAULT)
-subprocess.call(" apt install net-tools", shell=True);
-print(okStr)
+    print(color.BLUE + "Installing/Updating python3-pip..." + color.DEFAULT)
+    subprocess.call("apt update", shell=True);
+    subprocess.call("sudo apt install python3-pip", shell=True);
+    print(okStr)
+
+    print(color.BLUE + "Installing/Updating randmac..." + color.DEFAULT)
+    subprocess.call("sudo pip install randmac", shell=True);
+    print(okStr)
+
+
+
+checkForUpdates()
 
 subprocess.call("ifconfig", shell=True)
 
@@ -23,16 +40,20 @@ newMac = input(color.BLUE + "Give new MAC or press (d) for default: " + color.DE
 
 if newMac == "d" or "D":
 
-    subprocess.call(" ifconfig " + interface + " hw ether " + difMac, shell=True)
+    subprocess.call("sudo ifconfig " + interface + " hw ether " + difMac, shell=True)
 else:
     difMac = newMac
-    subprocess.call(" ifconfig " + interface + " hw ether " + difMac, shell=True)
+    subprocess.call("sudo ifconfig " + interface + " hw ether " + difMac, shell=True)
 
 subprocess.call("sudo ifconfig " + interface + " up", shell=True)
 
-print(okStr)
+print("")
 
-print(color.BLUE+"Check new MAC: "+color.DEFAULT)
+print(color.RED+"\t\tNew MAC\t\t\n------------------------------------ "+color.DEFAULT)
+print(difMac+ "\t\t")
+print(color.RED+"------------------------------------"+color.DEFAULT)
+print("\n")
+print(color.BLUE +"Running 'ifconfig for you'..."+color.DEFAULT)
 subprocess.call("sudo ifconfig", shell=True)
 subprocess.call("sudo ifconfig " + interface + " up", shell=True)
 
