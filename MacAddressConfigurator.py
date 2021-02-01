@@ -10,7 +10,7 @@ class color:
     RED = '\033[91m'
 
 
-difMac = str(RandMac())
+
 
 okStr = "---------------------------------------[OK]---------------------------------------"
 def checkForUpdates():
@@ -22,11 +22,14 @@ def checkForUpdates():
     subprocess.call("apt update", shell=True);
     subprocess.call("sudo apt install python3-pip", shell=True);
     from random import random
+    
+    
     print(okStr)
 
     print(color.BLUE + "Installing/Updating randmac..." + color.DEFAULT)
     subprocess.call("sudo pip install randmac", shell=True);
     from randmac import RandMac
+    difMac = str(RandMac())
     print(okStr)
 
 
