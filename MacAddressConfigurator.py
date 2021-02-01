@@ -28,13 +28,14 @@ def checkForUpdates():
 
     print(color.BLUE + "Installing/Updating randmac..." + color.DEFAULT)
     subprocess.call("sudo pip install randmac", shell=True);
-    from randmac import RandMac
+    #from randmac import RandMac
     
     print(okStr)
 
 
 
 checkForUpdates()
+from randmac import RandMac
 difMac = str(RandMac())
 
 subprocess.call("ifconfig", shell=True)
