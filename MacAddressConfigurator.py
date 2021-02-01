@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 import subprocess
-from random import random
-from randmac import RandMac
+#from random import random
+#from randmac import RandMac
 
 
 class color:
@@ -21,10 +21,12 @@ def checkForUpdates():
     print(color.BLUE + "Installing/Updating python3-pip..." + color.DEFAULT)
     subprocess.call("apt update", shell=True);
     subprocess.call("sudo apt install python3-pip", shell=True);
+    from random import random
     print(okStr)
 
     print(color.BLUE + "Installing/Updating randmac..." + color.DEFAULT)
     subprocess.call("sudo pip install randmac", shell=True);
+    from randmac import RandMac
     print(okStr)
 
 
