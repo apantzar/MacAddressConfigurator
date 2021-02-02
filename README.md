@@ -14,4 +14,4 @@ Runs with
 Bugs / Contact  
 -------------
  Feel free to mail me with any problem, bug or suggestions :
- anastasiospantz@gmail.com
+anastasiospantz@protonmail.com
