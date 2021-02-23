@@ -9,7 +9,7 @@ Runs with
 ```ruby
  git clone https://github.com/apantzar/MacAddressConfigurator.git
  cd MacAdressConfigurator
- sudo python3 MacAddressConfigurator.py
+ sudo python3 macC.py
  ```
 Bugs / Contact  
 -------------
