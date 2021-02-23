@@ -1,6 +1,6 @@
 MacAdressConfigurator
 ---------------------
-Welocome to MacAdressConfigurator!
+Welcome to MacAdressConfigurator!
 MacAdressConfigurator is a MAC address configurator
 tool.
 
