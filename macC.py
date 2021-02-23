@@ -8,11 +8,15 @@ class color:
     BLUE = '\033[96m'
     DEFAULT = '\033[0m'
     RED = '\033[91m'
+    test = '\033[95m'
+    test2 = '\033[94m'
 
 
 difMac = str(RandMac())
 
-okStr = "---------------------------------------[OK]---------------------------------------"
+okStr = color.test2+"===========================================[OK]=========================================="+color.DEFAULT
+
+#checking for updates/intstalling essentials
 def checkForUpdates():
     print(color.BLUE + "Installing/Updating net-tools..." + color.DEFAULT)
     subprocess.call(" apt install net-tools", shell=True);
@@ -26,6 +30,23 @@ def checkForUpdates():
     print(color.BLUE + "Installing/Updating randmac..." + color.DEFAULT)
     subprocess.call("sudo pip install randmac", shell=True);
     print(okStr)
+
+
+
+
+print("")
+print(color.test+""""                                    /$$$$$$ 
+                                   /$$__  $$
+ /$$$$$$/$$$$   /$$$$$$   /$$$$$$$| $$  \__/
+| $$_  $$_  $$ |____  $$ /$$_____/| $$      
+| $$ \ $$ \ $$  /$$$$$$$| $$      | $$      
+| $$ | $$ | $$ /$$__  $$| $$      | $$    $$
+| $$ | $$ | $$|  $$$$$$$|  $$$$$$$|  $$$$$$/
+|__/ |__/ |__/ \_______/ \_______/ \______/ 
+                                            
+                                            
+                                                  """ +color.DEFAULT)
+
 
 
 
