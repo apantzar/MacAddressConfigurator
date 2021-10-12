@@ -1,4 +1,4 @@
-MacAdressConfigurator
+MacAddressConfigurator
 ---------------------
 Welcome to MacAdressConfigurator!
 MacAdressConfigurator is a MAC address configurator
